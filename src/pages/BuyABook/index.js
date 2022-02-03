@@ -1,9 +1,10 @@
 import React from 'react';
+import Home from '../Home';
 
-const BuyABook = () => {
+const BuyABook = (props) => {
     return (
-        <div>
-
+        <div >
+            buy books here
         </div>
     );
 }
