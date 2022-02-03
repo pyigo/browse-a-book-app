@@ -16,6 +16,7 @@ import UserContext from "./contexts/UserContext";
 
 // axios
 import axios from "axios";
+import BookItem from "./pages/BuyABook/bookItem";
 
 // Api call using Axios
 
@@ -34,6 +35,7 @@ const App = () => {
           <Route path="mySelection" element={<MySelection />} />
           <Route path="login" element={<Login />} />
           <Route path="buyAbook" element={<BuyABook />} />
+          <Route path="bookItem" element={<BookItem />} />
         </Routes>
       </UserContext.Provider>
     </div>
