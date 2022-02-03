@@ -33,7 +33,7 @@ const BuyABook = () => {
     const addToMySelection = (book) => {
         // We want to trigger this function to update our state
         console.log("we added", book);
-        setFavorites([...mySelection, book]);
+        setMySelection([...mySelection, book]);
     };
 
     return (

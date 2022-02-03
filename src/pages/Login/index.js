@@ -14,7 +14,7 @@ const Login = ({ setUser }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         setUser(userName);
-        navigate('/home')
+        navigate('home')
 
 
     };

@@ -4,8 +4,8 @@ import '../BuyABook/index'
 
 const BookItem = (props) => {
     return (
-        <div className='col'>
-            <div className="card">
+        <div className='col' >
+            <div className="card" >
                 <img src={props.item.volumeInfo?.imageLinks?.thumbnail} className="card-img-top" alt="..." />
                 <div className="card-body">
                     <h5 className="card-title">Card title</h5>

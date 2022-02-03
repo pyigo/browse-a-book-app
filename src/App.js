@@ -30,10 +30,10 @@ const App = () => {
       <UserContext.Provider value={user}>
         <Navbar />
         <Routes>
-          <Route path="/" element={<Home setUser={setUser} />} />
+          <Route path="/" element={<Home />} />
           <Route path="genre" element={<Genre />} />
           <Route path="mySelection" element={<MySelection />} />
-          <Route path="login" element={<Login />} />
+          <Route path="login" element={<Login setUser={setUser} />} />
           <Route path="buyAbook" element={<BuyABook />} />
           <Route path="bookItem" element={<BookItem />} />
         </Routes>
