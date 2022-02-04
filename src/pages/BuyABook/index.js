@@ -7,13 +7,14 @@ import UserContext from "../../contexts/UserContext";
 import Login from "../Login";
 
 
+
 const BuyABook = () => {
     const [bookList, setBookList] = useState([]);
     const [searchInput, setSearchInput] = useState("");
     const [apiKey, setApiKey] = useState(
         "AIzaSyD6gzqxZbeUpHVm01tY5cbYdDnE5bRmE8Q"
     );
-    const [mySelection, setMySelection] = useState([]);
+
 
     const handleChange = (e) => {
         setSearchInput(e.target.value);
@@ -34,11 +35,7 @@ const BuyABook = () => {
             .catch((err) => console.error(err));
     };
 
-    const addToMySelection = (book) => {
-        // We want to trigger this function to update our state
-        console.log("we added", book);
-        setMySelection([...mySelection, book]);
-    };
+
 
     return (
         <div id="home-container">
@@ -61,7 +58,7 @@ const BuyABook = () => {
             </nav>
 
             <div className="container">
-                <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                <div className="row">
                     {bookList.map((item) => {
                         return <BookItem item={item} />;
                     })}

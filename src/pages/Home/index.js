@@ -6,7 +6,6 @@ import BuyABook from '../BuyABook';
 
 const Home = () => {
     // const [trendingBooks, setTrendingBooks] = useState([])
-
     return (
         <div>
             Home page empty for now
