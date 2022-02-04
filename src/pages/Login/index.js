@@ -14,12 +14,12 @@ const Login = ({ setUser }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         setUser(userName);
-        navigate('home')
+        navigate('/Book/Item')
 
 
     };
     return (
-        <div className="text-center">
+        <div className="text-center ">
             <form id="login-form"
                 onSubmit={handleSubmit}>
                 <img className="mb-4" src="https://images.unsplash.com/photo-1544716278-e513176f20b5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8Ym9va3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60" alt="" width="100" height="100" />

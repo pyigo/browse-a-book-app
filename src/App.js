@@ -1,6 +1,5 @@
 import { useState, useContext, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
-
 // components
 import Navbar from "./components/Navbar";
 
@@ -14,16 +13,15 @@ import Login from "./pages/Login";
 // contexts
 import UserContext from "./contexts/UserContext";
 
-// axios
-import axios from "axios";
 import BookItem from "./pages/BuyABook/bookItem";
 
-// Api call using Axios
+
 
 const App = () => {
   //
   const [user, setUser] = useState("");
   const [bookList, setBookList] = useState([]);
+  const [mySelection, setMySelection] = useState([]);
 
   return (
     <div className="App">
@@ -32,10 +30,10 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="genre" element={<Genre />} />
-          <Route path="mySelection" element={<MySelection />} />
+          <Route path="mySelection" element={<MySelection mySelection={mySelection} />} />
           <Route path="login" element={<Login setUser={setUser} />} />
           <Route path="buyAbook" element={<BuyABook />} />
-          <Route path="bookItem" element={<BookItem />} />
+
         </Routes>
       </UserContext.Provider>
     </div>
