@@ -6,8 +6,8 @@ import { useState } from 'react';
 const BookItem = (props) => {
     const addToMySelection = (book) => {
         // We want to trigger this function to update our state
-        console.log("we added", book);
-        this.useState.setMySelection([...this.useState.mySelection, book]);
+        // console.log("we added", book);
+        setMySelection([...mySelection, book]);
         console.log(this.useState.mySelection)
     };
 

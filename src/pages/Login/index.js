@@ -14,9 +14,7 @@ const Login = ({ setUser }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         setUser(userName);
-        navigate('/buyABook')
-
-
+        navigate('/buyAbook')
     };
     return (
         <div className="text-center ">
