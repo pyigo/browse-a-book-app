@@ -7,7 +7,7 @@ const BookItem = (props) => {
     const addToMySelection = (book) => {
         // We want to trigger this function to update our state
         // console.log("we added", book);
-        setMySelection([...mySelection, book]);
+        // useState(setMySelection([...mySelection, book]));
         console.log(this.useState.mySelection)
     };
 

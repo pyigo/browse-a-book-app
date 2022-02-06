@@ -7,11 +7,11 @@ const MySelection = ({ props }) => {
     return (
         <div className="container">
             {/* <div className="row">
-                {props.mySelection &&
+                {useState() &&
                     props.mySelection.map((item) => {
                         return <BookItem item={item} />;
                     })}
-            </div> */}
+            </div>  */}
         </div>
     );
 
