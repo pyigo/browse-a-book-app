@@ -5,6 +5,7 @@ import BookItem from "./bookItem";
 import MySelection from "../MySelection";
 import UserContext from "../../contexts/UserContext";
 import Login from "../Login";
+import './buyABook.css'
 
 
 
@@ -39,23 +40,23 @@ const BuyABook = () => {
 
     return (
         <div id="home-container">
-            <nav className="navbar navbar-light bg-light">
-                <div className="container-fluid">
-                    <form className="d-flex" onSubmit={handleSubmit}>
-                        <input
-                            className="form-control me-2"
-                            type="search"
-                            placeholder="Search"
-                            aria-label="Search"
-                            onChange={handleChange}
-                            value={searchInput}
-                        />
-                        <button className="btn btn-outline-success" type="submit">
-                            Search
-                        </button>
-                    </form>
-                </div>
-            </nav>
+            {/* <nav className="navbar navbar-light bg-light"> */}
+            <div className="container-sm">
+                <form className="d-flex" onSubmit={handleSubmit}>
+                    <input
+                        className="form-control me-2"
+                        type="search"
+                        placeholder="Search Book, Author"
+                        aria-label="Search"
+                        onChange={handleChange}
+                        value={searchInput}
+                    />
+                    <button className="btn btn-outline-success" type="submit">
+                        Search
+                    </button>
+                </form>
+            </div>
+            {/* </nav> */}
 
             <div className="container">
                 <div className="row">

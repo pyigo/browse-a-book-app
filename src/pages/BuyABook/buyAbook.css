@@ -1,7 +1,5 @@
-/* .buyABook-container {
-  /* background-color: brown; */
-/* width: 30%;
-  background-color: #dcdcdc;
-  border: 1px solid black; */
-/* border-radius: 1rem; */
-/* } */
+.container-sm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
