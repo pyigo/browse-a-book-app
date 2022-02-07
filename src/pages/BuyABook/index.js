@@ -26,7 +26,7 @@ const BuyABook = () => {
 
         axios
             .get(
-                `https://www.googleapis.com/books/v1/volumes?q=${searchInput}&key=${apiKey}`
+                `https://www.googleapis.com/books/v1/volumes?q=${searchInput}&key=${apiKey}&maxResults=40`
             )
             .then((data) => {
                 console.log(data.data.items);
