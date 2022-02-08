@@ -13,7 +13,7 @@ const BookItem = (props) => {
 
     return (
         <div className='col-md-4 mb-4' >
-            <div className="card h-100">
+            <div className="shadow-lg card h-100">
                 <img src={props.item.volumeInfo?.imageLinks?.thumbnail} className="card-img-top img-fluid"
                     alt="book-image" />
                 <div className="card-body"  >

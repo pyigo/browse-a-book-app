@@ -14,8 +14,7 @@ const Navbar = () => {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div className="navbar-nav">
-                        <Link className="nav-link active text-muted" aria-current="page" to="genre">Genre</Link>
-                        <Link className="nav-link text-muted" to="buyAbook">BuyABook</Link>
+                        <Link className="nav-link text-muted" to="buyAbook">Buy A Book</Link>
                         {
                             !user
                                 ?

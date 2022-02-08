@@ -37,7 +37,7 @@ const Home = () => {
                         console.log(trendingBook)
                         return (
                             < div className='col-md-4 mb-4' >
-                                <div className="card h-100">
+                                <div className="shadow card h-100">
                                     <img src={trendingBook.book_image} className="card-img-top img-fluid"
                                         alt="book-image" />
                                     <div className="card-body"  >
