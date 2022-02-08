@@ -2,6 +2,7 @@ import React from 'react';
 import Usercontext from "../../contexts/UserContext";
 import { Link } from 'react-router-dom';
 import { useContext } from "react";
+
 const Navbar = () => {
 
     const user = useContext(Usercontext)
