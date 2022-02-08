@@ -12,7 +12,7 @@ import MySelection from "./pages/MySelection";
 import Login from "./pages/Login";
 
 // contexts
-import UserContext from "./contexts/UserContext";
+import UserContext from "./Contexts/UserContext";
 
 import BookItem from "./pages/BuyABook/bookItem";
 import Footer from "./components/Footer";
@@ -32,7 +32,7 @@ const App = () => {
     <div className="App">
       <UserContext.Provider value={user}>
         <Navbar />
-        <div role="main" className="page-container">
+        <div className="page-container">
           <div className="content-wrapper">
             <Routes>
               <Route path="/" element={<Home />} />
