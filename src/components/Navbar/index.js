@@ -14,6 +14,7 @@ const Navbar = () => {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div className="navbar-nav">
+
                         <Link className="nav-link text-muted" to="buyAbook">Buy A Book</Link>
                         {
                             !user

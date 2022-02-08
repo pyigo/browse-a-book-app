@@ -13,10 +13,10 @@ const BookItem = (props) => {
 
     return (
         <div className='col-md-4 mb-4' >
-            <div className="shadow-lg card h-100">
+            <div className="shadow-lg card h-100" >
                 <img src={props.item.volumeInfo?.imageLinks?.thumbnail} className="card-img-top img-fluid"
                     alt="book-image" />
-                <div className="card-body"  >
+                <div className="card-body" >
                     <h3 className="card-title">{props.item.volumeInfo?.title}</h3>
                     <h5 className="card-title">Author: {props.item.volumeInfo?.authors}</h5>
                     <h5 className="card-title">Category: {props.item.volumeInfo?.categories}</h5>

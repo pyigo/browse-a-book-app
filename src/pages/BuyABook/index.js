@@ -39,9 +39,9 @@ const BuyABook = () => {
 
 
     return (
-        <div id="home-container">
+        <div id="home-container" >
             {/* <nav className="navbar navbar-light bg-light"> */}
-            <div className="container-sm mt-5">
+            <div className="container-sm mt-5" >
                 <form className="d-flex" onSubmit={handleSubmit}>
                     <input
                         className="form-control me-2"
@@ -59,7 +59,7 @@ const BuyABook = () => {
             {/* </nav> */}
 
             <div className="container mt-5">
-                <div className="row">
+                <div className="row" >
                     {bookList.map((item) => {
                         return <BookItem item={item} />;
                     })}

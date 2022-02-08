@@ -32,7 +32,7 @@ const App = () => {
     <div className="App">
       <UserContext.Provider value={user}>
         <Navbar />
-        <div role="main" class="page-container">
+        <div role="main" className="page-container">
           <div className="content-wrapper">
             <Routes>
               <Route path="/" element={<Home />} />
