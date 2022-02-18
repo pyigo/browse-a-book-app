@@ -8,12 +8,7 @@ const MySelection = ({ props }) => {
     return (
         <div className="container">
             Add  books here, buy later
-            {/* <div className="row">
-                {useState() &&
-                    props.mySelection.map((item) => {
-                        return <BookItem item={item} />;
-                    })}
-            </div>  */}
+            <p>(props.item)</p>
         </div>
     );
 
