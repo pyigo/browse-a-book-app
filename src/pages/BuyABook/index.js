@@ -9,7 +9,7 @@ import './buyABook.css'
 
 
 
-const BuyABook = () => {
+const BuyABook = ({ addToMySelection }) => {
     const [bookList, setBookList] = useState([]);
     const [searchInput, setSearchInput] = useState("");
     const [apiKey, setApiKey] = useState(
@@ -37,7 +37,7 @@ const BuyABook = () => {
     };
 
 
-
+    console.log('buy a book', addToMySelection)
     return (
         <div id="home-container" >
             {/* <nav className="navbar navbar-light bg-light"> */}
@@ -61,7 +61,7 @@ const BuyABook = () => {
             <div className="container mt-5">
                 <div className="row" >
                     {bookList.map((item) => {
-                        return <BookItem item={item} />;
+                        return <BookItem item={item} addToMySelection={(book) => { console.log('We are inside buy a boo', book); addToMySelection(book) }} />;
                     })}
                 </div>
             </div>

@@ -3,12 +3,11 @@ import BookItem from "../BuyABook/bookItem";
 import { useState } from "react";
 
 
-const MySelection = (props) => {
-    console.log(props)
-    // const getBookItem = (book) => {
-    //     console.log(book)
-    // }
+const MySelection = () => {
+
+
     return (
+
         <div className="container">
 
 

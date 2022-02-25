@@ -28,6 +28,11 @@ const App = () => {
   const [bookList, setBookList] = useState([]);
   const [mySelection, setMySelection] = useState([]);
 
+  const addToMySelection = (book) => {
+    setMySelection([...mySelection, book])
+  }
+
+  console.log('App', mySelection)
   return (
     <div className="App">
       <UserContext.Provider value={user}>
@@ -39,7 +44,7 @@ const App = () => {
 
               <Route path="mySelection" element={<MySelection mySelection={mySelection} />} />
               <Route path="login" element={<Login setUser={setUser} />} />
-              <Route path="buyAbook" element={<BuyABook />} bookList={bookList} setBookList={setBookList} />
+              <Route path="buyAbook" element={<BuyABook addToMySelection={(book) => addToMySelection(book)} />} />
 
             </Routes>
           </div>

@@ -34,7 +34,7 @@ const Home = () => {
             <div className="row">
                 {trendingBooks &&
                     trendingBooks.map((trendingBook) => {
-                        console.log(trendingBook)
+                        // console.log(trendingBook)
                         return (
                             < div className='col-md-4 mb-4' >
                                 <div className="shadow card h-100" key={trendingBook.id}>
