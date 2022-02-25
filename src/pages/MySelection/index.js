@@ -3,12 +3,15 @@ import BookItem from "../BuyABook/bookItem";
 import { useState } from "react";
 
 
-const MySelection = ({ props }) => {
-
+const MySelection = (props) => {
+    console.log(props)
+    // const getBookItem = (book) => {
+    //     console.log(book)
+    // }
     return (
         <div className="container">
-            Add  books here, buy later
-            <p>(props.item)</p>
+
+
         </div>
     );
 

@@ -39,7 +39,7 @@ const App = () => {
 
               <Route path="mySelection" element={<MySelection mySelection={mySelection} />} />
               <Route path="login" element={<Login setUser={setUser} />} />
-              <Route path="buyAbook" element={<BuyABook />} />
+              <Route path="buyAbook" element={<BuyABook />} bookList={bookList} setBookList={setBookList} />
 
             </Routes>
           </div>

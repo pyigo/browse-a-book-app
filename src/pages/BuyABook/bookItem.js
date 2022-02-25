@@ -1,16 +1,19 @@
 import React from 'react';
 import '../BuyABook/index';
+import '../MySelection/index'
 import { useState } from 'react';
 import BuyABook from '../BuyABook/index';
 import { changeState } from 'react'
 import { useEffect } from 'react';
 
 
-const BookItem = (props) => {
+const BookItem = (props, getBookItem) => {
     const addToMySelection = (book) => {
         // We want to trigger this function to update our state by adding selected book to my selection
         // useState(setMySelection([...mySelection, book]));
 
+        // getBookItem(props)
+        console.log(props)
     };
 
     return (
