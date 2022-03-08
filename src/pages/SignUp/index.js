@@ -5,35 +5,18 @@ import axios from "axios";
 
 
 const SignUp = ({ }) => {
+    const [loginEmail, setLoginEmail] = useState('')
+    const [loginPassword, setLoginPassword] = useState('')
 
-    const [firstName, setFirstName] = useState('')
-    const [lastName, setLastName] = useState('')
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        const userLogin = {
+            loginEmail: loginEmail,
+            loginPassword: loginPassword
+        }
 
-
-    const userLogin = {
-        firstname: firstName,
-        lastname: lastName,
-        email: email,
-
+        console.log(userLogin);
     }
-
-    const handleChange = (e) => {
-        setUserName(e.target.value);
-    };
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        setUser(userName);
-    }
-
-    const response = axios.post('http://localhost:8080/api/v1/users', userLogin)
-    if (response.status === 200) {
-        setFirstName('')
-        setLastName('')
-        setEmail('')
-    }
-
     return (
         // Sign up form code is taken from this website https://codepen.io/khadkamhn/pen/ZGvPLo
 
@@ -51,21 +34,23 @@ const SignUp = ({ }) => {
                     <div className="login-form">
                         <div className="sign-in-htm">
                             <div className="group">
-                                <label htmlFor="user" className="label" >
+                                <label htmlFor="login-email" className="label" >
                                     Email
                                 </label>
-                                <input id="user" type="text" className="input" value={email}
-                                    onChange={e => setEmail(e.target.value)} />
+                                <input id="login-email" type="text" className="input" value={loginEmail}
+                                    onChange={e => setLoginEmail(e.target.value)} />
                             </div>
                             <div className="group">
-                                <label htmlFor="pass" className="label">
+                                <label htmlFor="login-password" className="label">
                                     Password
                                 </label>
                                 <input
-                                    id="pass"
+                                    id="login-password"
                                     type="password"
                                     className="input"
                                     data-type="password"
+                                    value={loginPassword}
+                                    onChange={e => setLoginPassword(e.target.value)}
                                 />
                             </div>
                             <div className="group">
