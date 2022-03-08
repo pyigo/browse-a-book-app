@@ -1,49 +1,113 @@
-import React from 'react';
-import { useState } from 'react';
+import React from "react";
+import "../SignUp/signup.css"
+import { useState } from "react";
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import './login.css'
 
-const Login = ({ setUser }) => {
+const SignIn = () => {
+    // Login Form connection to database
+    const [loginEmail, setLoginEmail] = useState("");
+    const [loginPassword, setLoginPassword] = useState("");
+    const [errorMessage, setErrorMessage] = useState("");
 
-    const [userName, setUserName] = useState('');
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
-    const handleChange = (e) => {
-        setUserName(e.target.value);
-    };
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        setUser(userName);
-        navigate('/buyAbook')
+
+        // login form object
+        const userLogin = {
+            email: loginEmail,
+            password: loginPassword,
+        };
+        // user login REST call
+        const response = await axios
+            .post(`http://localhost:8080/api/v1/users/login`, userLogin)
+            .then((data) => {
+                console.log(data);
+                if (data.status === 200) {
+                    console.log(data.data);
+                    //redirect user to my selection after loggin in
+                    navigate("/mySelection");
+                } else {
+                    //setErrorMessage();
+
+                }
+            })
+            .catch((err) => {
+                console.error(err);
+                this.setState({ errorMessage: err.message });
+            });
     };
 
     return (
-        <div className="text-center ">
-            <form id="login-form"
-                onSubmit={handleSubmit}>
-                <img className="mb-4" src="https://images.unsplash.com/photo-1544716278-e513176f20b5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8Ym9va3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60" alt="" width="100" height="100" />
-                <h1 className="h3 mb-3 fw-normal">Please log in to see selected books</h1>
+        // Sign up form code is taken from this website https://codepen.io/khadkamhn/pen/ZGvPLo
 
-                <div className="form-floating">
-                    <input type="username" className="form-control" id="floatingInput" placeholder="Username" value={userName}
-                        onChange={handleChange} />
-                    <label htmlFor="floatingInput">User Name</label>
-                </div>
-                <div className="form-floating">
-                    <input type="password" className="form-control" id="floatingPassword" placeholder="Password" />
-                    <label htmlFor="floatingPassword">Password</label>
-                </div>
-
-                <div className="checkbox mb-3">
-                    <label>
-                        <input type="checkbox" value="remember-me" /> Remember me
+        <div className="login-wrap">
+            <form onSubmit={handleSubmit}>
+                <div className="login-html">
+                    <input
+                        id="tab-1"
+                        type="radio"
+                        name="tab"
+                        className="sign-in"
+                        checked="{true}"
+                    />
+                    <label htmlFor="tab-1" className="tab">
+                        Sign In
                     </label>
-                </div>
-                <button className="w-100 btn btn-lg btn-primary" type="submit">Log in</button>
+                    <div className="login-form">
+                        <div className="sign-in-htm">
+                            <div className="group">
+                                <label htmlFor="login-email" className="label">
+                                    Email
+                                </label>
+                                <input
+                                    id="login-email"
+                                    type="text"
+                                    className="input"
+                                    value={loginEmail}
+                                    onChange={(e) => setLoginEmail(e.target.value)}
+                                />
+                            </div>
+                            <div className="group">
+                                <label htmlFor="login-password" className="label">
+                                    Password
+                                </label>
+                                <input
+                                    id="login-password"
+                                    type="password"
+                                    className="input"
+                                    data-type="password"
+                                    value={loginPassword}
+                                    onChange={(e) => setLoginPassword(e.target.value)}
+                                />
+                            </div>
+                            <div className="group">
+                                <input id="check" type="checkbox" className="check" checked />
+                                <label htmlFor="check">
+                                    <span className="icon"></span> Keep me Signed in
+                                </label>
+                            </div>
 
+                            {this.state.errorMessage &&
+                                <div className="error"> {this.state.errorMessage} </div>}
+
+                            <div className="group">
+                                <input type="submit" className="button" value="Sign In" />
+                            </div>
+                            <div className="hr"></div>
+                            <div className="foot-lnk">
+                                <a href="#forgot">Forgot Password?</a>
+                            </div>
+
+                            {/* sign up form */}
+                        </div>
+                    </div>
+                </div>
             </form>
         </div>
-    )
-}
+    );
+};
 
-export default Login;
+export default SignIn;
