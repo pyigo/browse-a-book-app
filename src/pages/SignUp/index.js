@@ -2,21 +2,43 @@ import React from "react";
 import "./signup.css";
 import { useState } from 'react';
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 
-const SignUp = ({ }) => {
+const SignUp = () => {
     const [loginEmail, setLoginEmail] = useState('')
     const [loginPassword, setLoginPassword] = useState('')
+    const navigate = useNavigate()
 
     const handleSubmit = async (e) => {
         e.preventDefault()
         const userLogin = {
-            loginEmail: loginEmail,
-            loginPassword: loginPassword
+            email: loginEmail,
+            password: loginPassword
         }
 
         console.log(userLogin);
+
+        const response = axios
+            .post(
+                `http://localhost:8080/api/v1/users/login`, userLogin
+            )
+            .then((data) => {
+                console.log(data)
+                if (data.status === 200) {
+                    console.log(data.data)
+                    //redirect to my selection
+                    navigate('/mySelection')
+                }
+
+
+            })
+            .catch((err) => console.error(err));
     }
+
+
+
+
     return (
         // Sign up form code is taken from this website https://codepen.io/khadkamhn/pen/ZGvPLo
 
