@@ -25,6 +25,7 @@ const Navbar = () => {
                                 <Link className="nav-link text-muted" to="mySelection">MySelection</Link>
 
                         }
+                        <Link className="nav-link text-muted" to="signUp">Sign Up</Link>
                     </div>
                 </div>
             </div>

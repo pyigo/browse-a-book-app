@@ -19,6 +19,7 @@ import Footer from "./components/Footer";
 
 // css
 import './App.css'
+import SignUp from "./pages/SignUp";
 
 
 
@@ -45,7 +46,7 @@ const App = () => {
               <Route path="mySelection" element={<MySelection mySelection={mySelection} />} />
               <Route path="login" element={<Login setUser={setUser} />} />
               <Route path="buyAbook" element={<BuyABook addToMySelection={(book) => addToMySelection(book)} />} />
-
+              <Route path="signUp" element={<SignUp setUser={setUser} />} />
             </Routes>
           </div>
         </div>
