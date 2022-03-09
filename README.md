@@ -8,7 +8,7 @@ See the section about [Heroku](link for heroku) for more information.
 
 ## Wireframe
 
-Please check out [Figma](https://www.figma.com/file/6OnFCsHuq6Wpfd47akKi0B/Browse-a-Book?node-id=0%3A1) for more details on the wireframe
+Please check out [Figma](https://www.figma.com/file/m2hurmX41QiOXt13XB8kkk/Browse-a-book-Capstone?node-id=3%3A191) for more details on the wireframe
 
 ## Objectives
 

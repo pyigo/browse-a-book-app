@@ -9,7 +9,7 @@ import Home from "./pages/Home";
 import BuyABook from "./pages/BuyABook";
 
 import MySelection from "./pages/MySelection";
-import Login from "./pages/Login";
+import Login from "./pages/SignIn";
 
 // contexts
 import UserContext from "./Contexts/UserContext";
@@ -20,6 +20,7 @@ import Footer from "./components/Footer";
 // css
 import './App.css'
 import SignUp from "./pages/SignUp";
+import SignIn from "./pages/SignIn";
 
 
 
@@ -44,7 +45,7 @@ const App = () => {
               <Route path="/" element={<Home />} />
 
               <Route path="mySelection" element={<MySelection mySelection={mySelection} />} />
-              <Route path="login" element={<Login setUser={setUser} />} />
+              <Route path="signIn" element={<SignIn setUser={setUser} />} />
               <Route path="buyAbook" element={<BuyABook addToMySelection={(book) => addToMySelection(book)} />} />
               <Route path="signUp" element={<SignUp setUser={setUser} />} />
             </Routes>

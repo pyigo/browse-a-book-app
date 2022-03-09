@@ -20,9 +20,9 @@ const Navbar = () => {
                         {
                             !user
                                 ?
-                                <Link className="nav-link text-muted" to="login">Login</Link>
+                                <Link className="nav-link text-muted" to="signIn">Sign in</Link>
                                 :
-                                <Link className="nav-link text-muted" to="mySelection">MySelection</Link>
+                                <Link className="nav-link text-muted" to="mySelection">My Selection</Link>
 
                         }
                         <Link className="nav-link text-muted" to="signUp">Sign Up</Link>

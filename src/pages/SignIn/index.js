@@ -27,22 +27,22 @@ const SignIn = () => {
                 console.log(data);
                 if (data.status === 200) {
                     console.log(data.data);
-                    //redirect user to my selection after loggin in
+                    //redirect user to my selection after logged in
                     navigate("/mySelection");
                 } else {
-                    //setErrorMessage();
-
+                    console.log(data.message)
+                    setErrorMessage(data.message)
                 }
             })
             .catch((err) => {
-                console.error(err);
-                this.setState({ errorMessage: err.message });
+                console.log(err.response)
+                setErrorMessage(err.response.data.message)
             });
     };
 
     return (
-        // Sign up form code is taken from this website https://codepen.io/khadkamhn/pen/ZGvPLo
 
+        // Sign up form code is taken from this website https://codepen.io/khadkamhn/pen/ZGvPLo
         <div className="login-wrap">
             <form onSubmit={handleSubmit}>
                 <div className="login-html">
@@ -90,8 +90,8 @@ const SignIn = () => {
                                 </label>
                             </div>
 
-                            {this.state.errorMessage &&
-                                <div className="error"> {this.state.errorMessage} </div>}
+                            {errorMessage &&
+                                <div className="bg-danger mb-4"> {errorMessage} </div>}
 
                             <div className="group">
                                 <input type="submit" className="button" value="Sign In" />

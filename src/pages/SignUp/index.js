@@ -28,7 +28,8 @@ const SignUp = () => {
             .then((data) => {
                 console.log(data);
 
-                //redirecto loign
+                //redirect user to sign in page after signing up
+                navigate("/signIn");
             })
             .catch((err) => console.error(err));
     };
