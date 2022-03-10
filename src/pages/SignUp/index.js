@@ -12,26 +12,40 @@ const SignUp = () => {
     const [lastName, setLastName] = useState("");
     const [signUpEmail, setSignUpEmail] = useState("");
     const [signUpPassword, setSignUpPassword] = useState("");
+    const [errorMessage, setErrorMessage] = useState("");
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         // sign up Form object
-        const userSignUp = {
-            firstname: firstName,
-            lastname: lastName,
-            email: signUpEmail,
-            password: signUpPassword
-        };
+        if (firstName === "" || lastName === "" || signUpEmail === "" || signUpPassword === "") {
+            setErrorMessage("Invalid input");
+        } else {
+            const userSignUp = {
+                firstname: firstName,
+                lastname: lastName,
+                email: signUpEmail,
+                password: signUpPassword
+            };
 
-        // user sign up REST call 
-        axios.post('http://localhost:8080/api/v1/users', userSignUp)
-            .then((data) => {
-                console.log(data);
+            // user sign up REST call 
+            const result = await axios.post('http://localhost:8080/api/v1/users', userSignUp)
+                .then((data) => {
+                    console.log(data);
+                    if (data.status === 200) {
+                        console.log(data.data);
 
-                //redirect user to sign in page after signing up
-                navigate("/signIn");
-            })
-            .catch((err) => console.error(err));
+                        //redirect user to sign in page after signed up
+                        navigate("/signIn");
+                    } else {
+                        console.log(data.message)
+                        setErrorMessage(data.message)
+                    }
+                })
+                .catch((err) => {
+                    console.log(err.response)
+                    setErrorMessage(err.response.data.message)
+                });
+        }
     };
 
     return (
@@ -93,7 +107,8 @@ const SignUp = () => {
                                     onChange={(e) => setSignUpPassword(e.target.value)}
                                 />
                             </div>
-
+                            {errorMessage &&
+                                <div className="bg-danger mb-4"> {errorMessage} </div>}
                             <div className="group">
                                 <input type="submit" className="button" value="Sign Up" />
                             </div>
