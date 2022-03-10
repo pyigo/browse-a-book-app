@@ -69,7 +69,7 @@ const SignUp = () => {
                             </div>
                             <div className="group">
                                 <label htmlFor="signup-lastname" className="label">
-                                    First Name
+                                    Last Name
                                 </label>
                                 <input id="last-name" type="text" className="input" value={lastName}
                                     onChange={(e) => setLastName(e.target.value)} />
